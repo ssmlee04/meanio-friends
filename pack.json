@@ -1,0 +1,20 @@
+{
+  "name": "meanio-friends",
+  "version": "0.0.1",
+  "description": "Base system package",
+  "author": {
+    "name": "Shih-Min Lee"
+  },
+  "mean": "0.4.x",
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.4.x"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "babel-eslint": "^5.0.0-beta6",
+    "eslint": "^1.10.3",
+    "eslint-plugin-react": "^3.11.3"
+  },
+  "license": "MIT"
+}
