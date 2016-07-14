@@ -1,0 +1,19 @@
+{
+  "name": "meanio-friends",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ssmlee04/meanio-friends.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ssmlee04/meanio-friends/issues"
+  },
+  "homepage": "https://github.com/ssmlee04/meanio-friends#readme"
+}
