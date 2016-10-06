@@ -43,7 +43,7 @@ var checkUserExist = function(d) {
   if (!d || !d._id) {
     return Promise.reject("not a valid user");
   }
-  this.user = _.pick(JSON.parse(JSON.stringify(d)), "name", "email", "avatar")
+  this.user = _.pick(JSON.parse(JSON.stringify(d)), "name", "_id", "avatar")
   return d;
 };
 
@@ -51,7 +51,7 @@ var checkTargetExist = function(d) {
   if (!d || !d._id) {
     return Promise.reject("not a valid user");
   }
-  this.target = _.pick(JSON.parse(JSON.stringify(d)), "name", "email", "avatar")
+  this.target = _.pick(JSON.parse(JSON.stringify(d)), "name", "_id", "avatar")
   return d;
 };
 
@@ -68,6 +68,25 @@ FriendSchema.statics.__insert = function(userId) {
     }
   });
 };
+
+FriendSchema.statics.isMutual = function(userId, targetId) {
+  var that = this
+  
+  return Promise.cast(that.findOne({user_id: userId}).exec())
+  .then(function(d) {
+    if (!d || !d.friends) {
+      return Promise.reject("text-error-you-have-no-friends")
+    }
+    var friend = JSON.parse(JSON.stringify(d.friends || [])).filter(function(d) {
+      return d.user_id === targetId && ~~d.status === 3
+    })
+    if ( friend && friend.length === 1) {
+
+    } else {
+      return Promise.reject("text-error-not-friends-mutual")
+    }
+  });
+}
 
 FriendSchema.statics.load = function(userId) {
   var that = this;
