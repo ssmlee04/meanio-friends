@@ -43,7 +43,7 @@ var checkUserExist = function(d) {
   if (!d || !d._id) {
     return Promise.reject("not a valid user");
   }
-  this.user = _.pick(JSON.parse(JSON.stringify(d)), "name", "_id", "avatar")
+  this.user = _.pick(JSON.parse(JSON.stringify(d)), "name", "_id", "avatar", "location")
   return d;
 };
 
@@ -51,7 +51,7 @@ var checkTargetExist = function(d) {
   if (!d || !d._id) {
     return Promise.reject("not a valid user");
   }
-  this.target = _.pick(JSON.parse(JSON.stringify(d)), "name", "_id", "avatar")
+  this.target = _.pick(JSON.parse(JSON.stringify(d)), "name", "_id", "avatar", "location")
   return d;
 };
 
