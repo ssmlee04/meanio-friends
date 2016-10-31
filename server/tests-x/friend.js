@@ -13,7 +13,6 @@ var User = mongoose.model("User");
 var _ = require("lodash");
 var config = require("meanio").loadConfig();
 var testutils = require(path.join(config.root, "/config/testutils"));
-var utils = require(path.join(config.root, "/config/utils"));
 
 /**
  * Globals
